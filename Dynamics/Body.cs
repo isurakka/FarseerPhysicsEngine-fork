@@ -109,6 +109,14 @@ namespace FarseerPhysics.Dynamics
             world.AddBody(this); //FPE note: bodies can't live without a World
         }
 
+        public World World
+        {
+            get
+            {
+                return _world;
+            }
+        }
+
         /// <summary>
         /// A unique id for this body.
         /// </summary>
