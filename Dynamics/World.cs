@@ -105,6 +105,12 @@ namespace FarseerPhysics.Dynamics
         public ControllerDelegate ControllerRemoved;
 
         /// <summary>
+        /// Set the user data. Use this to store your application specific data.
+        /// </summary>
+        /// <value>The user data.</value>
+        public object UserData { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="World"/> class.
         /// </summary>
         public World(Vector2 gravity)
