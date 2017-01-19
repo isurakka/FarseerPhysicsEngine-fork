@@ -4,6 +4,7 @@
 */
 
 using System;
+using System.Numerics;
 using FarseerPhysics.Common;
 using FarseerPhysics.Dynamics;
 using Microsoft.Xna.Framework;

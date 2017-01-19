@@ -22,6 +22,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Numerics;
 using FarseerPhysics.Collision.Shapes;
 using FarseerPhysics.Common;
 using Microsoft.Xna.Framework;
@@ -774,8 +775,7 @@ namespace FarseerPhysics.Collision
                     // Shapes are still no overlapped.
                     // Move the witness points to the outer surface.
                     output.Distance -= rA + rB;
-                    Vector2 normal = output.PointB - output.PointA;
-                    normal.Normalize();
+                    Vector2 normal = Vector2.Normalize(output.PointB - output.PointA);
                     output.PointA += rA * normal;
                     output.PointB -= rB * normal;
                 }

@@ -22,6 +22,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Numerics;
 using Microsoft.Xna.Framework;
 
 namespace FarseerPhysics.Dynamics.Joints

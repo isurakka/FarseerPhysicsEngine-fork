@@ -30,6 +30,7 @@ SOFTWARE.
 #endregion License
 
 using System;
+using System.Numerics;
 
 namespace Microsoft.Xna.Framework
 {
@@ -58,6 +59,21 @@ namespace Microsoft.Xna.Framework
                                  (value3 - value1)*amount +
                                  (2.0*value1 - 5.0*value2 + 4.0*value3 - value4)*amountSquared +
                                  (3.0*value2 - value1 - 3.0*value3 + value4)*amountCubed));
+        }
+
+        public static Vector2 CatmullRom(Vector2 value1, Vector2 value2, Vector2 value3, Vector2 value4, float amount)
+        {
+            return new Vector2(
+                CatmullRom(value1.X, value2.X, value3.X, value4.X, amount),
+                CatmullRom(value1.Y, value2.Y, value3.Y, value4.Y, amount));
+        }
+
+        public static void CatmullRom(ref Vector2 value1, ref Vector2 value2, ref Vector2 value3, ref Vector2 value4,
+                                      float amount, out Vector2 result)
+        {
+            result = new Vector2(
+                CatmullRom(value1.X, value2.X, value3.X, value4.X, amount),
+                CatmullRom(value1.Y, value2.Y, value3.Y, value4.Y, amount));
         }
 
         public static float Clamp(float value, float min, float max)

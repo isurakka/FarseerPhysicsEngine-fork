@@ -20,6 +20,7 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
+using System.Numerics;
 using FarseerPhysics.Common;
 using Microsoft.Xna.Framework;
 
@@ -151,7 +152,7 @@ namespace FarseerPhysics.Collision.Shapes
             Vector2 v2 = _vertex2;
             Vector2 e = v2 - v1;
             Vector2 normal = new Vector2(e.Y, -e.X); //TODO: Could possibly cache the normal.
-            normal.Normalize();
+            normal = Vector2.Normalize(normal);
 
             // q = p1 + t * d
             // dot(normal, q - v1) = 0

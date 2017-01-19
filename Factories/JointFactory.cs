@@ -1,4 +1,5 @@
-﻿using FarseerPhysics.Dynamics;
+﻿using System.Numerics;
+using FarseerPhysics.Dynamics;
 using FarseerPhysics.Dynamics.Joints;
 using Microsoft.Xna.Framework;
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using Microsoft.Xna.Framework;
 
 namespace FarseerPhysics.Common.Decomposition

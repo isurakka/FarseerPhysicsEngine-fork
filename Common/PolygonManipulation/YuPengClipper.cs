@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using Microsoft.Xna.Framework;
 
 namespace FarseerPhysics.Common.PolygonManipulation
@@ -72,8 +73,7 @@ namespace FarseerPhysics.Common.PolygonManipulation
       // as the algorithm depends on it
       Vector2 lbSubject = subject.GetAABB().LowerBound;
       Vector2 lbClip = clip.GetAABB().LowerBound;
-      Vector2 translate;
-      Vector2.Min(ref lbSubject, ref lbClip, out translate);
+      Vector2 translate = Vector2.Min(lbSubject, lbClip);
       translate = Vector2.One - translate;
       if (translate != Vector2.Zero)
       {

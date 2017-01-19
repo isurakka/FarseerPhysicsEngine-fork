@@ -20,6 +20,7 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
+using System.Numerics;
 using FarseerPhysics.Common;
 using Microsoft.Xna.Framework;
 
@@ -245,7 +246,7 @@ namespace FarseerPhysics.Dynamics.Joints
 
                 if (_linearImpulse.LengthSquared() > maxImpulse * maxImpulse)
                 {
-                    _linearImpulse.Normalize();
+                    _linearImpulse = Vector2.Normalize(_linearImpulse);
                     _linearImpulse *= maxImpulse;
                 }
 

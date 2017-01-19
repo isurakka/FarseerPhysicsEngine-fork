@@ -1,4 +1,5 @@
-﻿using FarseerPhysics.Dynamics;
+﻿using System.Numerics;
+using FarseerPhysics.Dynamics;
 using Microsoft.Xna.Framework;
 
 namespace FarseerPhysics.Controllers
@@ -45,7 +46,7 @@ namespace FarseerPhysics.Controllers
                     }
                     else
                     {
-                        Direction.Normalize();
+                        Direction = Vector2.Normalize(Direction);
 
                         forceVector = Direction;
 
@@ -60,12 +61,12 @@ namespace FarseerPhysics.Controllers
                     if (Variation != 0)
                     {
                         float strengthVariation = (float)Randomize.NextDouble() * MathHelper.Clamp(Variation, 0, 1);
-                        forceVector.Normalize();
+                        forceVector = Vector2.Normalize(forceVector);
                         body.ApplyForce(forceVector * strength * decayMultiplier * strengthVariation);
                     }
                     else
                     {
-                        forceVector.Normalize();
+                        forceVector = Vector2.Normalize(forceVector);
                         body.ApplyForce(forceVector * strength * decayMultiplier);
                     }
                 }
